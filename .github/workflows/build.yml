@@ -103,7 +103,10 @@ jobs:
             - name: Install system dependencies
               run: |
                   sudo apt-get update
-                  sudo apt-get install -y libwebkit2gtk-4.0-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
+                  # Try to install WebKit2GTK packages with fallback options
+                  sudo apt-get install -y libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
+                  # Try different WebKit2GTK package names for different Ubuntu versions
+                  sudo apt-get install -y libwebkit2gtk-4.0-dev || sudo apt-get install -y libwebkit2gtk-4.1-dev || sudo apt-get install -y libwebkit2gtk-4.0-37-dev
             - name: Cache Rust dependencies
               uses: actions/cache@v4
               with:
