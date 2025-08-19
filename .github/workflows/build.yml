@@ -142,7 +142,7 @@ jobs:
                   path: |
                       athas/target/release/bundle/appimage/*.AppImage
                       athas/target/release/bundle/deb/*.deb
-                      athas/target/release/athas-code
+                      athas/target/release/athas-code-linux
                   retention-days: 30
 
     build-macos:
@@ -197,5 +197,5 @@ jobs:
                   path: |
                       athas/target/release/bundle/dmg/*.dmg
                       athas/target/release/bundle/app/*.app
-                      athas/target/release/athas-code
+                      athas/target/release/athas-code-macos
                   retention-days: 30
